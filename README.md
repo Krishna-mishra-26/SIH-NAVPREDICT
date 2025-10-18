@@ -1,358 +1,714 @@
-# NavPredict - GNSS Error Forecasting System# NavPredict - GNSS Error Forecasting System
+# NavPredict - GNSS Error Forecasting System# NavPredict - GNSS Error Forecasting System# NavPredict - GNSS Error Forecasting System
 
 
 
-AI/ML system for predicting satellite clock and ephemeris errors using LSTM, Transformer, ARIMA, and Gaussian Process models.A comprehensive AI/ML-powered system for predicting GNSS satellite clock and ephemeris errors using multiple deep learning architectures. **Perfect for beginners and experts alike!**
+AI/ML system for predicting satellite clock and ephemeris errors using LSTM, Transformer, ARIMA, and Gaussian Process models.
 
 
 
----📖 **Complete Guide for Everyone** | Setup in 5 minutes | Deploy in production | No prior experience needed!
+---AI/ML system for predicting satellite clock and ephemeris errors using LSTM, Transformer, ARIMA, and Gaussian Process models.A comprehensive AI/ML-powered system for predicting GNSS satellite clock and ephemeris errors using multiple deep learning architectures. **Perfect for beginners and experts alike!**
 
 
 
-## 🚀 Quick Start (5 minutes)---
+## 🚀 Quick Start (5 minutes)
 
 
 
-### 1️⃣ Setup## 🌌 Problem Statement
+### Setup---📖 **Complete Guide for Everyone** | Setup in 5 minutes | Deploy in production | No prior experience needed!
 
 
 
-**Windows:**Global Navigation Satellite System (GNSS) accuracy is fundamentally limited by unpredictable satellite clock and ephemeris (orbit) errors. This system ingests 7 days of satellite error data and predicts errors for the 8th day at 15-minute intervals using advanced AI/ML models.
+**Windows:**
 
 ```powershell
 
-.\setup.bat**Challenge**: ISRO Smart India Hackathon 2025/2026 - Problem Statement #25176
+.\setup.bat## 🚀 Quick Start (5 minutes)---
 
 ```
 
----
+
 
 **Linux/Mac:**
 
-```bash## 🎯 Key Features
+```bash### 1️⃣ Setup## 🌌 Problem Statement
 
 chmod +x setup.sh
 
+./setup.sh
+
+```
+
+**Windows:**Global Navigation Satellite System (GNSS) accuracy is fundamentally limited by unpredictable satellite clock and ephemeris (orbit) errors. This system ingests 7 days of satellite error data and predicts errors for the 8th day at 15-minute intervals using advanced AI/ML models.
+
+### Run
+
+```powershell
+
+**Terminal 1 - Backend:**
+
+```bash.\setup.bat**Challenge**: ISRO Smart India Hackathon 2025/2026 - Problem Statement #25176
+
+cd backend
+
+python app.py```
+
+```
+
+---
+
+**Terminal 2 - Frontend:**
+
+```bash**Linux/Mac:**
+
+cd frontend
+
+npm run dev```bash## 🎯 Key Features
+
+```
+
+chmod +x setup.sh
+
+**Open:** `http://localhost:3000`
+
 ./setup.sh- ✅ **Multiple ML Architectures**: LSTM, Transformer, ARIMA, Gaussian Process
+
+---
 
 ```- ✅ **Real-time Data Processing**: 15-minute interval alignment, outlier detection, feature engineering
 
+## 📋 Workflow (5 Steps)
+
 - ✅ **Advanced Visualization**: Interactive time-series charts, satellite orbit animation, distribution plots
 
-### 2️⃣ Run- ✅ **Probabilistic Forecasting**: Confidence intervals and normality scoring
+1. **Upload CSV** → Select your data file
 
-- ✅ **Comprehensive Metrics**: RMSE, MAE, MAPE, Normality Index
+2. **Preprocess** → Auto data cleaning & alignment### 2️⃣ Run- ✅ **Probabilistic Forecasting**: Confidence intervals and normality scoring
+
+3. **Train Model** → Choose LSTM/Transformer/ARIMA/Gaussian Process
+
+4. **View Predictions** → See 24-hour forecast with confidence- ✅ **Comprehensive Metrics**: RMSE, MAE, MAPE, Normality Index
+
+5. **Export** → Save as CSV/JSON
 
 **Terminal 1 - Backend:**- ✅ **Export Functionality**: CSV and JSON report generation
 
+---
+
 ```bash- ✅ **Scientific UI**: Space tech themed interface with dark mode
+
+## 📊 Dataset Format
 
 cd backend- ✅ **Production Ready**: Docker, Kubernetes, AWS deployment ready
 
+CSV with 5 required columns:
+
 python app.py- ✅ **Fully Tested**: Unit tests, integration tests included
-
-```- ✅ **Well Documented**: Complete API docs, developer guide, deployment guide
-
-
-
-**Terminal 2 - Frontend:**---
-
-```bash
-
-cd frontend## 📋 Dataset Format
-
-npm run dev
-
-```The system expects CSV files with the following columns:
-
-
-
-**Open:** `http://localhost:3000`| Column | Format | Example | Description |
-
-|--------|--------|---------|-------------|
-
----| `utc_time` | MM/DD/YYYY HH:MM | 01/01/2024 00:15 | Timestamp in UTC |
-
-| `x_error (m)` | Float | 1.23 | X-axis ephemeris error (meters) |
-
-## 📋 Workflow (5 Steps)| `y_error (m)` | Float | 2.34 | Y-axis ephemeris error (meters) |
-
-| `z_error (m)` | Float | 3.45 | Z-axis ephemeris error (meters) |
-
-1. **Upload CSV** → Select your data file| `satclockerror (m)` | Float | 4.56 | Satellite clock error (meters) |
-
-2. **Preprocess** → Auto data cleaning & alignment
-
-3. **Train Model** → Choose LSTM/Transformer/ARIMA/Gaussian Process**Supported satellite types**: GEO, GSO, MEO
-
-4. **View Predictions** → See 24-hour forecast with confidence
-
-5. **Export** → Save as CSV/JSON**Example CSV**:
 
 ```csv
 
----utc_time,x_error (m),y_error (m),z_error (m),satclockerror (m)
+utc_time,x_error (m),y_error (m),z_error (m),satclockerror (m)```- ✅ **Well Documented**: Complete API docs, developer guide, deployment guide
 
 01/01/2024 00:00,1.23,2.34,3.45,4.56
 
-## 📊 Dataset Format01/01/2024 00:15,1.25,2.36,3.47,4.58
-
-01/01/2024 00:30,1.27,2.38,3.49,4.60
-
-CSV with 5 required columns:```
-
-
-
-```csv**Provided datasets**:
-
-utc_time,x_error (m),y_error (m),z_error (m),satclockerror (m)- `DATA_GEO_Train.csv` - GEO satellite training data
-
-01/01/2024 00:00,1.23,2.34,3.45,4.56- `DATA_MEO_Train.csv` - MEO satellite training data
-
-01/01/2024 00:15,1.25,2.36,3.47,4.58- `DATA_MEO_Train2.csv` - Additional MEO training data
+01/01/2024 00:15,1.25,2.36,3.47,4.58
 
 ```
 
----
+**Terminal 2 - Frontend:**---
 
 | Column | Type | Description |
 
-|--------|------|-------------|## 🏗️ Complete Project Structure
+|--------|------|-------------|```bash
 
 | utc_time | Text | Format: MM/DD/YYYY HH:MM |
 
-| x_error (m) | Float | X-axis error (meters) |```
+| x_error (m) | Float | X-axis error (meters) |cd frontend## 📋 Dataset Format
 
-| y_error (m) | Float | Y-axis error (meters) |NavPredict/
+| y_error (m) | Float | Y-axis error (meters) |
 
-| z_error (m) | Float | Z-axis error (meters) |├── backend/                           # Python Flask API
+| z_error (m) | Float | Z-axis error (meters) |npm run dev
 
-| satclockerror (m) | Float | Clock error (meters) |│   ├── app.py                         # Main Flask server (8 endpoints)
+| satclockerror (m) | Float | Clock error (meters) |
 
-│   ├── config.py                      # Configuration constants
+```The system expects CSV files with the following columns:
 
-**Satellites:** GEO, MEO│   ├── data_preprocessor.py           # Data cleaning & feature engineering
+**Satellites:** GEO, MEO
 
-│   ├── ml_models.py                   # LSTM, Transformer, ARIMA, Gaussian Process
 
----│   ├── advanced_models.py             # Ensemble, Hybrid, Adaptive models
-
-│   ├── explainability.py              # SHAP-like interpretability
-
-## 🤖 ML Models│   ├── tests.py                       # Unit & integration tests
-
-│   ├── requirements.txt                # Python dependencies
-
-| Model | Speed | Accuracy | Use Case |│   └── uploads/                       # (created at runtime) Uploaded files
-
-|-------|-------|----------|----------|│
-
-| **LSTM** | ⚡⚡ | ⭐⭐⭐⭐⭐ | Temporal patterns |├── frontend/                          # React + Vite UI
-
-| **Transformer** | ⚡⚡ | ⭐⭐⭐⭐⭐ | Long-range deps |│   ├── src/
-
-| **ARIMA** | ⚡⚡⚡ | ⭐⭐⭐ | Baseline |│   │   ├── components/
-
-| **Gaussian Process** | ⚡ | ⭐⭐⭐⭐ | Uncertainty |│   │   │   ├── Dashboard.jsx          # Main orchestrator component
-
-│   │   │   ├── DataUpload.jsx         # Drag-drop file upload
-
----│   │   │   ├── ModelTrainer.jsx       # Training UI & progress
-
-│   │   │   ├── ForecastChart.jsx      # Interactive predictions chart
-
-## 📈 Metrics│   │   │   ├── InsightsPanel.jsx      # Feature importance & anomalies
-
-│   │   │   ├── ExportPanel.jsx        # CSV/JSON export
-
-- **RMSE** - Root Mean Squared Error (meters)│   │   │   ├── KPICard.jsx            # KPI display card
-
-- **MAE** - Mean Absolute Error (meters)│   │   │   ├── SatelliteOrbit.jsx     # Animated satellite visualization
-
-- **MAPE** - Mean Absolute % Error│   │   │   ├── Tabs.jsx               # Tab navigation
-
-- **Normality** - Distribution quality (0-1, >0.85 good)│   │   │   ├── App.jsx                # Root component
-
-│   │   │   ├── main.jsx               # React entry point
-
----│   │   │   └── index.css              # Global styles
-
-│   │   └── index.html                 # HTML template
-
-## 🔌 API Endpoints│   ├── vite.config.js                 # Vite build configuration
-
-│   ├── tailwind.config.js             # Tailwind CSS theme
-
-| Method | Endpoint | Purpose |│   ├── postcss.config.js              # PostCSS configuration
-
-|--------|----------|---------|│   └── package.json                   # Node dependencies
-
-| GET | `/health` | System status |│
-
-| POST | `/upload` | Upload CSV |├── ml_models/                         # (created at runtime) Trained models
-
-| POST | `/preprocess` | Process data |│
-
-| POST | `/train` | Train model |├── Dockerfile.backend                 # Python production image
-
-| GET | `/training-status` | Check progress |├── Dockerfile.frontend                # Node.js production image
-
-| POST | `/predict` | Generate forecast |├── docker-compose.yml                 # Multi-container orchestration
-
-| GET | `/models` | List models |│
-
-| GET | `/export-predictions` | Download results |├── setup.sh                           # Automated setup (Linux/Mac)
-
-├── setup.bat                          # Automated setup (Windows)
-
-**Base URL:** `http://localhost:5000`│
-
-├── .env.example                       # Environment variables template
-
-**Example:**├── README.md                          # THIS FILE
-
-```bash├── DEPLOYMENT.md                      # Deployment guide (4 options)
-
-curl -F "file=@DATA_MEO_Train.csv" http://localhost:5000/upload├── DEVELOPER_GUIDE.md                 # Development workflows
-
-├── SYSTEM_OVERVIEW.md                 # Architecture details
-
-curl -X POST -H "Content-Type: application/json" \└── PROJECT_SUMMARY.md                 # Completion checklist
-
-  -d '{"filepath":"data.csv","model_type":"lstm","satellite_type":"MEO"}' \```
-
-  http://localhost:5000/train
-
-```---
-
-
-
----## 🚀 Quick Start (Choose Your Path)
-
-
-
-## ⚙️ Configuration (backend/config.py)### 🤖 Path 1: Automated Setup (Recommended for Beginners)
-
-
-
-```python#### Windows PowerShell:
-
-# Data settings```powershell
-
-SEQUENCE_LENGTH = 96          # 24 hours lookbackcd path\to\NavPredict
-
-PREDICTION_HORIZON = 96       # Predict 24 hours.\setup.bat
-
-SATELLITE_TYPES = ['GEO', 'MEO']```
-
-
-
-# Model settings#### Linux/Mac Terminal:
-
-BATCH_SIZE = 32               # Reduce if out of memory```bash
-
-EPOCHS = 100                  # More = better but slowercd path/to/NavPredict
-
-LEARNING_RATE = 0.001chmod +x setup.sh
-
-LSTM_HIDDEN_DIM = 128./setup.sh
-
-LSTM_NUM_LAYERS = 2```
-
-LSTM_DROPOUT = 0.2
-
-**What this does**:
-
-# File uploads- ✅ Checks Python 3.9+ installed
-
-MAX_CONTENT_LENGTH = 50 * 1024 * 1024  # 50MB max- ✅ Checks Node.js 16+ installed
-
-ALLOWED_EXTENSIONS = {'csv', 'json'}- ✅ Creates Python virtual environment
-
-```- ✅ Installs all Python dependencies
-
-- ✅ Installs all Node.js dependencies
-
-**Memory issues?** Set:- ✅ Shows startup commands
-
-```python
-
-BATCH_SIZE = 16               # Smaller---
-
-EPOCHS = 50                   # Fewer
-
-SEQUENCE_LENGTH = 48          # Shorter### 📚 Path 2: Manual Setup (For Learning)
-
-```
-
-#### Step 1: Install Prerequisites
 
 ---
 
-**Check what you have** (Windows):
+**Open:** `http://localhost:3000`| Column | Format | Example | Description |
 
-## 📁 Project Structure```powershell
+## 🤖 ML Models
 
-python --version        # Should be 3.9 or higher
+|--------|--------|---------|-------------|
 
-```node --version         # Should be 16 or higher
+| Model | Speed | Accuracy | Use Case |
 
-NavPredict/npm --version
+|-------|-------|----------|----------|---| `utc_time` | MM/DD/YYYY HH:MM | 01/01/2024 00:15 | Timestamp in UTC |
 
-├── backend/```
+| **LSTM** | ⚡⚡ | ⭐⭐⭐⭐⭐ | Temporal patterns |
 
-│   ├── app.py                 # Flask API (8 endpoints)
+| **Transformer** | ⚡⚡ | ⭐⭐⭐⭐⭐ | Long-range deps || `x_error (m)` | Float | 1.23 | X-axis ephemeris error (meters) |
 
-│   ├── config.py              # Settings**Check what you have** (Linux/Mac):
+| **ARIMA** | ⚡⚡⚡ | ⭐⭐⭐ | Baseline |
 
-│   ├── data_preprocessor.py   # Data pipeline```bash
+| **Gaussian Process** | ⚡ | ⭐⭐⭐⭐ | Uncertainty |## 📋 Workflow (5 Steps)| `y_error (m)` | Float | 2.34 | Y-axis ephemeris error (meters) |
 
-│   ├── ml_models.py           # Models (LSTM, Transformer, ARIMA, GP)python3 --version      # Should be 3.9 or higher
 
-│   ├── advanced_models.py     # Ensemble, Hybrid, Adaptivenode --version        # Should be 16 or higher
 
-│   ├── explainability.py      # Feature importancenpm --version
+---| `z_error (m)` | Float | 3.45 | Z-axis ephemeris error (meters) |
 
-│   ├── tests.py               # Unit tests```
 
-│   └── requirements.txt       # Dependencies
 
-│**Don't have them?** Download:
+## 📈 Metrics1. **Upload CSV** → Select your data file| `satclockerror (m)` | Float | 4.56 | Satellite clock error (meters) |
 
-├── frontend/- Python: https://www.python.org/downloads/ (choose 3.10 or 3.11)
 
-│   ├── src/components/        # React UI components- Node.js: https://nodejs.org/ (choose LTS version)
 
-│   ├── package.json           # npm dependencies
+- **RMSE** - Root Mean Squared Error (meters)2. **Preprocess** → Auto data cleaning & alignment
 
-│   ├── tailwind.config.js     # Styling#### Step 2: Setup Backend
+- **MAE** - Mean Absolute Error (meters)
 
-│   └── vite.config.js         # Build config
+- **MAPE** - Mean Absolute % Error3. **Train Model** → Choose LSTM/Transformer/ARIMA/Gaussian Process**Supported satellite types**: GEO, GSO, MEO
 
-│```bash
+- **Normality** - Distribution quality (0-1, >0.85 good)
 
-├── setup.sh / setup.bat       # Quick setup# Navigate to backend
+4. **View Predictions** → See 24-hour forecast with confidence
 
-├── docker-compose.yml         # Multi-containercd backend
+---
 
-├── Dockerfile.backend         # Backend image
+5. **Export** → Save as CSV/JSON**Example CSV**:
 
-├── Dockerfile.frontend        # Frontend image# Create Python virtual environment
+## 🔌 API Endpoints
 
-├── DATA_GEO_Train.csv         # Sample GEO data# Windows:
+```csv
 
-├── DATA_MEO_Train.csv         # Sample MEO datapython -m venv venv
+| Method | Endpoint | Purpose |
 
-└── README.md                  # This filevenv\Scripts\activate
+|--------|----------|---------|---utc_time,x_error (m),y_error (m),z_error (m),satclockerror (m)
+
+| GET | `/health` | System status |
+
+| POST | `/upload` | Upload CSV |01/01/2024 00:00,1.23,2.34,3.45,4.56
+
+| POST | `/preprocess` | Process data |
+
+| POST | `/train` | Train model |## 📊 Dataset Format01/01/2024 00:15,1.25,2.36,3.47,4.58
+
+| GET | `/training-status` | Check progress |
+
+| POST | `/predict` | Generate forecast |01/01/2024 00:30,1.27,2.38,3.49,4.60
+
+| GET | `/models` | List models |
+
+| GET | `/export-predictions` | Download results |CSV with 5 required columns:```
+
+
+
+**Base URL:** `http://localhost:5000`
+
+
+
+**Example:**```csv**Provided datasets**:
+
+```bash
+
+curl -F "file=@DATA_MEO_Train.csv" http://localhost:5000/uploadutc_time,x_error (m),y_error (m),z_error (m),satclockerror (m)- `DATA_GEO_Train.csv` - GEO satellite training data
+
+
+
+curl -X POST -H "Content-Type: application/json" \01/01/2024 00:00,1.23,2.34,3.45,4.56- `DATA_MEO_Train.csv` - MEO satellite training data
+
+  -d '{"filepath":"data.csv","model_type":"lstm","satellite_type":"MEO"}' \
+
+  http://localhost:5000/train01/01/2024 00:15,1.25,2.36,3.47,4.58- `DATA_MEO_Train2.csv` - Additional MEO training data
 
 ```
 
+```
+
+---
+
+---
+
+## ⚙️ Configuration (backend/config.py)
+
+| Column | Type | Description |
+
+```python
+
+# Data settings|--------|------|-------------|## 🏗️ Complete Project Structure
+
+SEQUENCE_LENGTH = 96          # 24 hours lookback
+
+PREDICTION_HORIZON = 96       # Predict 24 hours| utc_time | Text | Format: MM/DD/YYYY HH:MM |
+
+SATELLITE_TYPES = ['GEO', 'MEO']
+
+| x_error (m) | Float | X-axis error (meters) |```
+
+# Model settings
+
+BATCH_SIZE = 32               # Reduce if out of memory| y_error (m) | Float | Y-axis error (meters) |NavPredict/
+
+EPOCHS = 100                  # More = better but slower
+
+LEARNING_RATE = 0.001| z_error (m) | Float | Z-axis error (meters) |├── backend/                           # Python Flask API
+
+LSTM_HIDDEN_DIM = 128
+
+LSTM_NUM_LAYERS = 2| satclockerror (m) | Float | Clock error (meters) |│   ├── app.py                         # Main Flask server (8 endpoints)
+
+LSTM_DROPOUT = 0.2
+
+│   ├── config.py                      # Configuration constants
+
+# File uploads
+
+MAX_CONTENT_LENGTH = 50 * 1024 * 1024  # 50MB max**Satellites:** GEO, MEO│   ├── data_preprocessor.py           # Data cleaning & feature engineering
+
+ALLOWED_EXTENSIONS = {'csv', 'json'}
+
+```│   ├── ml_models.py                   # LSTM, Transformer, ARIMA, Gaussian Process
+
+
+
+**Memory issues?** Set:---│   ├── advanced_models.py             # Ensemble, Hybrid, Adaptive models
+
+```python
+
+BATCH_SIZE = 16               # Smaller│   ├── explainability.py              # SHAP-like interpretability
+
+EPOCHS = 50                   # Fewer
+
+SEQUENCE_LENGTH = 48          # Shorter## 🤖 ML Models│   ├── tests.py                       # Unit & integration tests
+
+```
+
+│   ├── requirements.txt                # Python dependencies
+
+---
+
+| Model | Speed | Accuracy | Use Case |│   └── uploads/                       # (created at runtime) Uploaded files
+
+## 📁 Project Structure
+
+|-------|-------|----------|----------|│
+
+```
+
+NavPredict/| **LSTM** | ⚡⚡ | ⭐⭐⭐⭐⭐ | Temporal patterns |├── frontend/                          # React + Vite UI
+
+├── backend/
+
+│   ├── app.py                 # Flask API (8 endpoints)| **Transformer** | ⚡⚡ | ⭐⭐⭐⭐⭐ | Long-range deps |│   ├── src/
+
+│   ├── config.py              # Settings
+
+│   ├── data_preprocessor.py   # Data pipeline| **ARIMA** | ⚡⚡⚡ | ⭐⭐⭐ | Baseline |│   │   ├── components/
+
+│   ├── ml_models.py           # Models (LSTM, Transformer, ARIMA, GP)
+
+│   ├── advanced_models.py     # Ensemble, Hybrid, Adaptive| **Gaussian Process** | ⚡ | ⭐⭐⭐⭐ | Uncertainty |│   │   │   ├── Dashboard.jsx          # Main orchestrator component
+
+│   ├── explainability.py      # Feature importance
+
+│   ├── tests.py               # Unit tests│   │   │   ├── DataUpload.jsx         # Drag-drop file upload
+
+│   └── requirements.txt       # Dependencies
+
+│---│   │   │   ├── ModelTrainer.jsx       # Training UI & progress
+
+├── frontend/
+
+│   ├── src/components/        # React UI components│   │   │   ├── ForecastChart.jsx      # Interactive predictions chart
+
+│   ├── package.json           # npm dependencies
+
+│   ├── tailwind.config.js     # Styling## 📈 Metrics│   │   │   ├── InsightsPanel.jsx      # Feature importance & anomalies
+
+│   └── vite.config.js         # Build config
+
+││   │   │   ├── ExportPanel.jsx        # CSV/JSON export
+
+├── setup.sh / setup.bat       # Quick setup
+
+├── docker-compose.yml         # Multi-container- **RMSE** - Root Mean Squared Error (meters)│   │   │   ├── KPICard.jsx            # KPI display card
+
+├── Dockerfile.backend         # Backend image
+
+├── Dockerfile.frontend        # Frontend image- **MAE** - Mean Absolute Error (meters)│   │   │   ├── SatelliteOrbit.jsx     # Animated satellite visualization
+
+├── DATA_GEO_Train.csv         # Sample GEO data
+
+├── DATA_MEO_Train.csv         # Sample MEO data- **MAPE** - Mean Absolute % Error│   │   │   ├── Tabs.jsx               # Tab navigation
+
+└── README.md                  # This file
+
+```- **Normality** - Distribution quality (0-1, >0.85 good)│   │   │   ├── App.jsx                # Root component
+
+
+
+---│   │   │   ├── main.jsx               # React entry point
+
+
+
+## 🐳 Docker---│   │   │   └── index.css              # Global styles
+
+
+
+```bash│   │   └── index.html                 # HTML template
+
+# Start all services
+
+docker-compose up --build## 🔌 API Endpoints│   ├── vite.config.js                 # Vite build configuration
+
+
+
+# Services running:│   ├── tailwind.config.js             # Tailwind CSS theme
+
+# - Backend: http://localhost:5000
+
+# - Frontend: http://localhost:3000| Method | Endpoint | Purpose |│   ├── postcss.config.js              # PostCSS configuration
+
+
+
+# Stop|--------|----------|---------|│   └── package.json                   # Node dependencies
+
+docker-compose down
+
+| GET | `/health` | System status |│
+
+# View logs
+
+docker-compose logs -f backend| POST | `/upload` | Upload CSV |├── ml_models/                         # (created at runtime) Trained models
+
+```
+
+| POST | `/preprocess` | Process data |│
+
+---
+
+| POST | `/train` | Train model |├── Dockerfile.backend                 # Python production image
+
+## 🧪 Testing
+
+| GET | `/training-status` | Check progress |├── Dockerfile.frontend                # Node.js production image
+
+```bash
+
+cd backend| POST | `/predict` | Generate forecast |├── docker-compose.yml                 # Multi-container orchestration
+
+python -m pytest tests.py -v
+
+```| GET | `/models` | List models |│
+
+
+
+---| GET | `/export-predictions` | Download results |├── setup.sh                           # Automated setup (Linux/Mac)
+
+
+
+## ❓ Troubleshooting├── setup.bat                          # Automated setup (Windows)
+
+
+
+### Backend won't start - Port 5000 in use**Base URL:** `http://localhost:5000`│
+
+
+
+```powershell├── .env.example                       # Environment variables template
+
+# Windows
+
+netstat -ano | findstr :5000**Example:**├── README.md                          # THIS FILE
+
+taskkill /PID [number] /F
+
+```bash├── DEPLOYMENT.md                      # Deployment guide (4 options)
+
+# Linux/Mac
+
+lsof -i :5000curl -F "file=@DATA_MEO_Train.csv" http://localhost:5000/upload├── DEVELOPER_GUIDE.md                 # Development workflows
+
+kill -9 [number]
+
+```├── SYSTEM_OVERVIEW.md                 # Architecture details
+
+
+
+### Frontend can't connect backendcurl -X POST -H "Content-Type: application/json" \└── PROJECT_SUMMARY.md                 # Completion checklist
+
+- Check backend runs: `python app.py`
+
+- Verify CORS enabled in `app.py`  -d '{"filepath":"data.csv","model_type":"lstm","satellite_type":"MEO"}' \```
+
+- Confirm port 5000 is listening
+
+  http://localhost:5000/train
+
+### Out of memory error
+
+```---
+
+Edit `backend/config.py`:
+
+```python
+
+BATCH_SIZE = 16              # ← Reduce
+
+EPOCHS = 50                  # ← Reduce---## 🚀 Quick Start (Choose Your Path)
+
+SEQUENCE_LENGTH = 48         # ← Reduce
+
+```
+
+
+
+### CSV upload fails## ⚙️ Configuration (backend/config.py)### 🤖 Path 1: Automated Setup (Recommended for Beginners)
+
+- Ensure exactly 5 columns with correct names
+
+- Date format must be: MM/DD/YYYY HH:MM
+
+- No empty rows or special characters
+
+- Check file size < 50MB```python#### Windows PowerShell:
+
+
+
+### Poor predictions (low normality)# Data settings```powershell
+
+- Try different model type
+
+- Increase `EPOCHS = 200`SEQUENCE_LENGTH = 96          # 24 hours lookbackcd path\to\NavPredict
+
+- Lower `LEARNING_RATE = 0.0001`
+
+- Check input data qualityPREDICTION_HORIZON = 96       # Predict 24 hours.\setup.bat
+
+
+
+---SATELLITE_TYPES = ['GEO', 'MEO']```
+
+
+
+## 📥 Input/Output
+
+
+
+**Input (CSV):**# Model settings#### Linux/Mac Terminal:
+
+```csv
+
+utc_time,x_error (m),y_error (m),z_error (m),satclockerror (m)BATCH_SIZE = 32               # Reduce if out of memory```bash
+
+01/08/2024 00:00,1.24,2.35,3.46,4.57
+
+01/08/2024 00:15,1.26,2.37,3.48,4.59EPOCHS = 100                  # More = better but slowercd path/to/NavPredict
+
+```
+
+LEARNING_RATE = 0.001chmod +x setup.sh
+
+**Output (JSON):**
+
+```jsonLSTM_HIDDEN_DIM = 128./setup.sh
+
+{
+
+  "predictions": [[1.24,2.35,3.46,4.57],[1.26,2.37,3.48,4.59]],LSTM_NUM_LAYERS = 2```
+
+  "timestamps": ["2024-01-08 00:00","2024-01-08 00:15"],
+
+  "metrics": {"rmse":0.52,"mae":0.34,"mape":6.2,"normality":0.88}LSTM_DROPOUT = 0.2
+
+}
+
+```**What this does**:
+
+
+
+---# File uploads- ✅ Checks Python 3.9+ installed
+
+
+
+## ✅ Quick ChecklistMAX_CONTENT_LENGTH = 50 * 1024 * 1024  # 50MB max- ✅ Checks Node.js 16+ installed
+
+
+
+After setup:ALLOWED_EXTENSIONS = {'csv', 'json'}- ✅ Creates Python virtual environment
+
+- [ ] Backend running on port 5000
+
+- [ ] Frontend running on port 3000```- ✅ Installs all Python dependencies
+
+- [ ] http://localhost:3000 loads in browser
+
+- [ ] Satellite animation visible- ✅ Installs all Node.js dependencies
+
+- [ ] Can upload CSV file
+
+- [ ] Can train model (progress bar appears)**Memory issues?** Set:- ✅ Shows startup commands
+
+- [ ] Can view predictions chart
+
+- [ ] Can export results```python
+
+
+
+---BATCH_SIZE = 16               # Smaller---
+
+
+
+## 📦 DependenciesEPOCHS = 50                   # Fewer
+
+
+
+**Backend:**SEQUENCE_LENGTH = 48          # Shorter### 📚 Path 2: Manual Setup (For Learning)
+
+- Flask 2.3.3
+
+- TensorFlow 2.13```
+
+- PyTorch 2.0
+
+- scikit-learn 1.3#### Step 1: Install Prerequisites
+
+- pandas 2.0
+
+---
+
+**Frontend:**
+
+- React 18.2**Check what you have** (Windows):
+
+- Vite 4.4
+
+- Tailwind CSS 3.3## 📁 Project Structure```powershell
+
+- Recharts 2.10
+
+python --version        # Should be 3.9 or higher
+
+---
+
+```node --version         # Should be 16 or higher
+
+## 🚀 Deployment
+
+NavPredict/npm --version
+
+### Local
+
+```bash├── backend/```
+
+./setup.bat  # or ./setup.sh
+
+# Run both backend and frontend│   ├── app.py                 # Flask API (8 endpoints)
+
+```
+
+│   ├── config.py              # Settings**Check what you have** (Linux/Mac):
+
+### Docker
+
+```bash│   ├── data_preprocessor.py   # Data pipeline```bash
+
+docker-compose up --build
+
+```│   ├── ml_models.py           # Models (LSTM, Transformer, ARIMA, GP)python3 --version      # Should be 3.9 or higher
+
+
+
+### AWS EC2│   ├── advanced_models.py     # Ensemble, Hybrid, Adaptivenode --version        # Should be 16 or higher
+
+1. SSH to instance
+
+2. Run `./setup.sh`│   ├── explainability.py      # Feature importancenpm --version
+
+3. Start services with nohup
+
+4. Configure Nginx reverse proxy│   ├── tests.py               # Unit tests```
+
+
+
+### Kubernetes│   └── requirements.txt       # Dependencies
+
+```bash
+
+kubectl apply -f k8s/deployment.yaml│**Don't have them?** Download:
+
+```
+
+├── frontend/- Python: https://www.python.org/downloads/ (choose 3.10 or 3.11)
+
+---
+
+│   ├── src/components/        # React UI components- Node.js: https://nodejs.org/ (choose LTS version)
+
+## 📞 Reference
+
+│   ├── package.json           # npm dependencies
+
+| Task | Command |
+
+|------|---------|│   ├── tailwind.config.js     # Styling#### Step 2: Setup Backend
+
+| Setup | `.\setup.bat` or `./setup.sh` |
+
+| Backend | `cd backend && python app.py` |│   └── vite.config.js         # Build config
+
+| Frontend | `cd frontend && npm run dev` |
+
+| Tests | `cd backend && python -m pytest tests.py` |│```bash
+
+| Docker | `docker-compose up --build` |
+
+| Stop Docker | `docker-compose down` |├── setup.sh / setup.bat       # Quick setup# Navigate to backend
+
+
+
+---├── docker-compose.yml         # Multi-containercd backend
+
+
+
+## 🎯 Key Features├── Dockerfile.backend         # Backend image
+
+
+
+✅ 4 ML models (LSTM, Transformer, ARIMA, GP)  ├── Dockerfile.frontend        # Frontend image# Create Python virtual environment
+
+✅ Data preprocessing pipeline  
+
+✅ REST API with 8 endpoints  ├── DATA_GEO_Train.csv         # Sample GEO data# Windows:
+
+✅ Interactive visualization  
+
+✅ Feature importance analysis  ├── DATA_MEO_Train.csv         # Sample MEO datapython -m venv venv
+
+✅ Confidence intervals  
+
+✅ CSV & JSON export  └── README.md                  # This filevenv\Scripts\activate
+
+✅ Docker ready  
+
+✅ Unit tests included  ```
+
+✅ Production ready  
+
 # Linux/Mac:
+
+---
 
 ---python3 -m venv venv
 
-source venv/bin/activate
+**Version:** 1.0.0  
+
+**Status:** Complete ✅  source venv/bin/activate
+
+**Challenge:** ISRO Smart India Hackathon 2025/2026
 
 ## 🐳 Docker
 
